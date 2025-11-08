@@ -3,10 +3,12 @@ import cors from 'cors';
 import helmet from 'helmet';
 import dotenv from 'dotenv';
 import path from 'path';
+import swaggerUi from 'swagger-ui-express';
 import DatabaseManager from './utils/database';
 import logger from './utils/logger';
 import { errorHandler } from './middlewares/errorHandler';
 import { requestLogger } from './middlewares/requestLogger';
+import { swaggerSpec } from './config/swagger';
 
 // Import routes
 import companyRoutes from './routes/companyRoutes';
@@ -51,6 +53,12 @@ app.use('/uploads', express.static(path.join(__dirname, '../uploads')));
 // ========================================
 // Routes
 // ========================================
+
+// Swagger Documentation
+app.use('/api/docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec, {
+  customSiteTitle: 'CloudCoder API Docs',
+  customCss: '.swagger-ui .topbar { display: none }',
+}));
 
 // API routes
 app.use('/api/health', healthRoutes);

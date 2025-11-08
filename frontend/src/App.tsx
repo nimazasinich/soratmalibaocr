@@ -3,6 +3,8 @@ import { Toaster } from 'react-hot-toast';
 import Dashboard from './pages/Dashboard';
 import OCRUpload from './pages/OCRUpload';
 import FraudReport from './pages/FraudReport';
+import Analysis from './pages/Analysis';
+import AdminPanel from './pages/AdminPanel';
 import Layout from './components/layout/Layout';
 
 function App() {
@@ -14,7 +16,8 @@ function App() {
           <Route path="/" element={<Dashboard />} />
           <Route path="/ocr" element={<OCRUpload />} />
           <Route path="/fraud" element={<FraudReport />} />
-          {/* More routes will be added as needed */}
+          <Route path="/analysis" element={<Analysis />} />
+          <Route path="/admin" element={<AdminPanel />} />
         </Routes>
       </Layout>
     </Router>
