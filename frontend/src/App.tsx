@@ -1,6 +1,8 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
 import Dashboard from './pages/Dashboard';
+import OCRUpload from './pages/OCRUpload';
+import FraudReport from './pages/FraudReport';
 import Layout from './components/layout/Layout';
 
 function App() {
@@ -10,7 +12,9 @@ function App() {
       <Layout>
         <Routes>
           <Route path="/" element={<Dashboard />} />
-          {/* More routes will be added in upcoming phases */}
+          <Route path="/ocr" element={<OCRUpload />} />
+          <Route path="/fraud" element={<FraudReport />} />
+          {/* More routes will be added as needed */}
         </Routes>
       </Layout>
     </Router>
