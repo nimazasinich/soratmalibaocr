@@ -273,7 +273,7 @@ export class FraudDetectionService {
       description = 'رشد بالای حساب‌های دریافتنی نسبت به فروش';
     } else if (ratio > 1.2) {
       score = 40;
-      severity: 'Medium',
+      severity = 'Medium';
       description = 'رشد حساب‌های دریافتنی بیش از فروش';
     } else {
       description = 'رشد حساب‌های دریافتنی متناسب با فروش';
