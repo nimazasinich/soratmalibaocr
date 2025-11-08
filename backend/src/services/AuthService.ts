@@ -201,7 +201,7 @@ export class AuthService {
       },
       this.jwtSecret,
       {
-        expiresIn: this.jwtExpiry,
+        expiresIn: this.jwtExpiry as string | number,
       }
     );
   }

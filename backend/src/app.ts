@@ -1,4 +1,4 @@
-import express, { Express, Request, Response, NextFunction } from 'express';
+import express, { Express, Request, Response } from 'express';
 import cors from 'cors';
 import helmet from 'helmet';
 import dotenv from 'dotenv';
@@ -69,7 +69,7 @@ app.use('/api/analysis', analysisRoutes);
 app.use('/api/ocr', ocrRoutes);
 
 // Root route
-app.get('/', (req: Request, res: Response) => {
+app.get('/', (_req: Request, res: Response) => {
   res.json({
     message: '🧠 CloudCoder Financial Fraud Detection API',
     version: '1.0.0',
