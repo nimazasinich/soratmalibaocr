@@ -124,7 +124,7 @@ export class OCRService {
   /**
    * Extract numbers from OCR text (both Persian and English)
    */
-  private static extractNumbers(text: string, words: any[]): ExtractedNumber[] {
+  private static extractNumbers(_text: string, words: any[]): ExtractedNumber[] {
     const numbers: ExtractedNumber[] = [];
 
     // Persian to English digit mapping
@@ -146,7 +146,7 @@ export class OCRService {
       // Check for Persian numbers
       const persianNumberMatch = wordText.match(/[۰-۹,،]+/g);
       if (persianNumberMatch) {
-        persianNumberMatch.forEach((match) => {
+        persianNumberMatch.forEach((match: string) => {
           const converted = convertPersianToEnglish(match.replace(/[,،]/g, ''));
           const value = parseFloat(converted);
 
@@ -167,7 +167,7 @@ export class OCRService {
       // Check for English numbers
       const englishNumberMatch = wordText.match(/[\d,]+/g);
       if (englishNumberMatch) {
-        englishNumberMatch.forEach((match) => {
+        englishNumberMatch.forEach((match: string) => {
           const value = parseFloat(match.replace(/,/g, ''));
 
           if (!isNaN(value)) {
