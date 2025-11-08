@@ -1,0 +1,66 @@
+{
+  "app": {
+    "title": "CloudCoder",
+    "subtitle": "سیستم هوشمند تحلیل مالی و تشخیص تقلب"
+  },
+  "nav": {
+    "dashboard": "داشبورد",
+    "companies": "شرکت‌ها",
+    "statements": "صورت‌های مالی",
+    "analysis": "تحلیل",
+    "fraud": "تشخیص تقلب",
+    "risk": "مدیریت ریسک",
+    "forecast": "پیش‌بینی",
+    "ocr": "OCR",
+    "admin": "مدیریت",
+    "logout": "خروج"
+  },
+  "dashboard": {
+    "title": "داشبورد تحلیل مالی",
+    "welcome": "خوش آمدید",
+    "overview": "نمای کلی",
+    "recentAnalysis": "تحلیل‌های اخیر",
+    "alerts": "هشدارها"
+  },
+  "common": {
+    "save": "ذخیره",
+    "cancel": "انصراف",
+    "delete": "حذف",
+    "edit": "ویرایش",
+    "add": "افزودن",
+    "search": "جستجو",
+    "filter": "فیلتر",
+    "export": "خروجی",
+    "loading": "در حال بارگذاری...",
+    "error": "خطا",
+    "success": "موفق",
+    "warning": "هشدار",
+    "info": "اطلاعات"
+  },
+  "financial": {
+    "assets": "دارایی‌ها",
+    "liabilities": "بدهی‌ها",
+    "equity": "حقوق صاحبان سهام",
+    "revenue": "درآمد",
+    "netIncome": "سود خالص",
+    "cash": "نقد",
+    "currentAssets": "دارایی‌های جاری",
+    "currentLiabilities": "بدهی‌های جاری"
+  },
+  "ratios": {
+    "title": "نسبت‌های مالی",
+    "liquidity": "نقدینگی",
+    "profitability": "سودآوری",
+    "leverage": "اهرمی",
+    "efficiency": "کارایی"
+  },
+  "fraud": {
+    "title": "تشخیص تقلب",
+    "riskLevel": "سطح ریسک",
+    "indicators": "شاخص‌های تقلب",
+    "low": "پایین",
+    "medium": "متوسط",
+    "high": "بالا",
+    "critical": "بحرانی"
+  }
+}

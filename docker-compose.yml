@@ -1,0 +1,48 @@
+version: '3.8'
+
+services:
+  # Backend API
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: cloudcoder-backend
+    ports:
+      - "8000:8000"
+    environment:
+      - NODE_ENV=production
+      - PORT=8000
+      - DB_PATH=/app/database/finance.db
+      - OCR_LANG=fas+eng
+      - JWT_SECRET=${JWT_SECRET:-cloudcoder_jwt_secret_change_me}
+      - CORS_ORIGIN=http://localhost:5173
+    volumes:
+      - ./database:/app/database
+      - ./uploads:/app/uploads
+      - ./logs:/app/logs
+    restart: unless-stopped
+    networks:
+      - cloudcoder-network
+
+  # Frontend
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: cloudcoder-frontend
+    ports:
+      - "5173:80"
+    depends_on:
+      - backend
+    restart: unless-stopped
+    networks:
+      - cloudcoder-network
+
+networks:
+  cloudcoder-network:
+    driver: bridge
+
+volumes:
+  database:
+  uploads:
+  logs:
