@@ -42,28 +42,50 @@ soratmalibaocr/
 
 - Node.js >= 18.0.0
 - npm >= 9.0.0
-- Docker (اختیاری)
+- Docker & Docker Compose (برای deployment)
 
-### نصب
+### روش 1: اجرا با Docker (توصیه می‌شود) 🐳
 
 ```bash
-# نصب وابستگی‌ها
+# 1. کلون کردن ریپازیتوری (اگر قبلاً انجام نشده)
+git clone <repository-url>
+cd soratmalibaocr
+
+# 2. اجرای Docker Compose
+docker-compose up -d
+
+# 3. مشاهده لاگ‌ها
+docker-compose logs -f
+```
+
+✅ **سیستم آماده است!**
+- Backend API: http://localhost:8000
+- Frontend Dashboard: http://localhost:5173
+- API Health: http://localhost:8000/api/health
+- API Docs: http://localhost:8000/api/docs (قابل پیاده‌سازی در آینده)
+
+### روش 2: اجرای Manual (برای توسعه)
+
+```bash
+# 1. نصب وابستگی‌های root
 npm install
 
-# کپی فایل محیطی
+# 2. کپی فایل محیطی
 cp .env.example .env
 
-# اجرای پروژه در حالت توسعه
+# 3. راه‌اندازی Backend
+cd backend
+npm install
+npm run db:init  # Initialize database
+npm run dev
+
+# 4. در ترمینال جدید - راه‌اندازی Frontend
+cd frontend
+npm install
 npm run dev
 ```
 
 Backend در `http://localhost:8000` و Frontend در `http://localhost:5173` اجرا می‌شود.
-
-### اجرا با Docker
-
-```bash
-docker-compose up -d
-```
 
 ## 📊 نسبت‌های مالی محاسبه‌شده
 
